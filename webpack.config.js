@@ -1,30 +1,32 @@
+const webpack = require('webpack');
 const path = require('path');
+
 
 module.exports = {
   entry: [
     'webpack-hot-middleware/client',
+    'react-hot-loader/patch',
     './src/app.js'
   ],
     
   output: {
-    path: '/public'
+    path: path.resolve(__dirname, 'public'),
+    filename: 'bundle.js',
+    publicPath: '/'
   },
-  // webpack-dev-middleware options
-  // See https://github.com/webpack/webpack-dev-middleware
-  assets: {
-
-  },
-
-  // webpack-hot-middleware options
-  // See https://github.com/glenjamin/webpack-hot-middleware
-  hot: {},
+  
+  plugins: [
+    new webpack.optimize.OccurrenceOrderPlugin(),
+    new webpack.HotModuleReplacementPlugin()
+  ],
+  
   module: {
     loaders: [
       {
         test: /\.js$/,
         include: path.join(__dirname, 'src'),
-        loaders: ['babel-loader']
+        loaders: 'babel-loader'
       }
     ]
-  },
+  }
 };
