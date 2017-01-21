@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import injectSheet from 'react-jss'
+import styles from './styles'
 
 
 class App extends Component {
@@ -8,7 +10,8 @@ class App extends Component {
   
   render() {
     return (
-      <div>Providers: 
+      <div className={this.props.sheet.classes.title}>
+        Providers: 
         {this.props.providers.map((p) => 
           <div key={p.id}>{p.text}</div>
         )}
@@ -17,4 +20,4 @@ class App extends Component {
   }
 }
 
-export default App;
+export default injectSheet(styles)(App);
