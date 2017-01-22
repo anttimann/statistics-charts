@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM, { unmountComponentAtNode } from 'react-dom';
-import { Provider } from 'react-redux'
-import { createStore, applyMiddleware } from 'redux'
+import { Provider } from 'react-redux';
+import { createStore, applyMiddleware } from 'redux';
 import thunk from 'redux-thunk';
 import createLogger from 'redux-logger';
 import { rootReducer } from './reducers';
@@ -31,6 +31,6 @@ if (module.hot) {
         </Provider>
       </AppContainer>,
       rootEl
-    )
-  })
-};
+    );
+  });
+}

@@ -19,7 +19,7 @@ function fetchProviders() {
         error: err
       });
     }
-  }
+  };
 }
 
 export {

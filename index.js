@@ -6,7 +6,7 @@ function register(server, options, next) {
     { register: inert }
   ];
     
-  server.register(plugins, (err) => {
+  server.register(plugins, () => {
     server.route({
       method: 'GET',
       path: '/{param*}',

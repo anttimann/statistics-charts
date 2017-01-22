@@ -1,6 +1,6 @@
-import React, { Component } from 'react';
-import injectSheet from 'react-jss'
-import styles from './styles'
+import React, { Component, PropTypes } from 'react';
+import injectSheet from 'react-jss';
+import styles from './styles';
 
 
 class App extends Component {
@@ -19,5 +19,11 @@ class App extends Component {
     );
   }
 }
+
+App.propTypes = {
+  fetchPosts: PropTypes.isRequired,
+  providers: PropTypes.array.isRequired,
+  sheet: PropTypes.object.isRequired
+};
 
 export default injectSheet(styles)(App);

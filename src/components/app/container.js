@@ -1,4 +1,4 @@
-import { connect } from 'react-redux'
+import { connect } from 'react-redux';
 import AppComponent from './component';
 import { fetchProviders } from '../../actions';
 
@@ -6,7 +6,7 @@ import { fetchProviders } from '../../actions';
 function mapStateToProps(state) {
   return {
     providers: state.providers
-  }
+  };
 }
 
 function mapDispatchToProps(dispatch) {
@@ -14,7 +14,7 @@ function mapDispatchToProps(dispatch) {
     fetchPosts: () => {
       return dispatch(fetchProviders());
     }
-  } 
+  }; 
 }
 
 const App = connect(mapStateToProps, mapDispatchToProps)(AppComponent);
@@ -22,4 +22,3 @@ const App = connect(mapStateToProps, mapDispatchToProps)(AppComponent);
 export {
   App
 };
-
